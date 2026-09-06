@@ -1,0 +1,135 @@
+.philosophy-section,
+.capabilities-section,
+.core-section,
+.work-section,
+.about-section {
+    position: relative;
+    width: 100%;
+    padding-block:
+        var(--section-padding-mobile);
+}
+
+.section-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-mobile);
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+    width: 100%;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.75fr);
+    gap: var(--space-16);
+    width: 100%;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
+    align-items: start;
+    gap: var(--space-16);
+    width: 100%;
+}
+.contact-section {
+    position: relative;
+    width: 100%;
+    padding-block:
+       var(--section-padding-mobile);
+    border-top:
+        var(--border-width-thin) solid var(--color-border-subtle);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 60rem;
+}
+
+@media (min-width: 768px) {
+    .philosophy-section,
+    .capabilities-section,
+    .core-section,
+    .work-section,
+    .about-section {
+        padding-block:
+            var(--section-padding-tablet);
+    }
+    .section-container {
+        padding-inline:
+            var(--container-padding-tablet);
+    }
+    .contact-section {
+        padding-block:
+            var(--section-padding-tablet);
+    }
+}
+
+@media (min-width: 1024px) {
+    .philosophy-section,
+    .capabilities-section,
+    .core-section,
+    .work-section,
+    .about-section {
+        padding-block:
+            var(--section-padding-desktop);
+    }
+    .section-container {
+        padding-inline:
+            var(--container-padding-desktop);
+    }
+    .contact-section {
+        padding-block:
+            var(--section-padding-desktop);
+    }
+}
+
+@media (max-width: 1023px) {
+    .philosophy-content {
+        grid-template-columns:
+            minmax(0, 1fr) minmax(16rem, 0.8fr);
+        gap: var(--space-10);
+    }
+    .about-layout {
+        grid-template-columns:
+            minmax(0, 1fr) minmax(16rem, 0.8fr);
+        gap: var(--space-10);
+    }
+}
+@media (max-width: 767px) {
+    .section-container {
+        padding-inline:
+            var(--container-padding-mobile);
+    }
+    .section-header {
+        gap: var(--space-5);
+    }
+    .philosophy-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .philosophy-section,
+    .capabilities-section,
+    .core-section,
+    .work-section,
+    .about-section,
+    .contact-section {
+        scroll-behavior: auto;
+    }
+}

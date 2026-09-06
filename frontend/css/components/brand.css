@@ -1,0 +1,42 @@
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text-primary);
+    transition:
+        color var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+.site-brand__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+
+/*
+ * The brand is intentionally treated as a typographic
+ * element at this stage. The visual identity can later
+ * incorporate an isotype without changing the component API.
+ */
+.site-brand:hover {
+    color: var(--color-primary-hover);
+}
+
+.site-brand__name {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-brand {
+        transition: none;
+    }
+}

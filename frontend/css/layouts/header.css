@@ -1,0 +1,121 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:
+        var(--z-header);
+    width: 100%;
+    border-bottom:
+        var(--border-width-thin)
+        solid
+        var(--color-border-subtle);
+    background:
+        color-mix(
+            in srgb,
+            var(--color-background) 82%,
+            transparent
+        );
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width:
+        var(--container-max-width);
+    min-height:
+        5rem;
+    margin-inline:
+        auto;
+    padding-inline:
+        var(--container-padding-mobile);
+}
+
+.header-container .site-brand {
+    flex-shrink: 0;
+}
+
+.header-container .site-navigation {
+    margin-inline:
+        auto;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap:
+        var(--space-6);
+    flex-shrink: 0;
+}
+
+.header-actions .button {
+    min-height:
+        2.5rem;
+    padding-inline:
+        var(--space-5);
+    font-size:
+        var(--font-size-xs);
+}
+
+@media (max-width: 1023px) {
+    .header-container {
+        min-height:
+            4.5rem;
+        padding-inline:
+            var(--container-padding-tablet);
+    }
+
+    .header-container .site-navigation {
+        margin-inline:
+            var(--space-6);
+    }
+
+    .header-actions {
+        gap:
+            var(--space-4);
+    }
+}
+
+@media (max-width: 767px) {
+    .header-container {
+        min-height:
+            4rem;
+        padding-inline:
+            var(--container-padding-mobile);
+    }
+
+    .header-container .site-navigation {
+        display:
+            none;
+    }
+    
+    .header-actions {
+        gap:
+            var(--space-3);
+    }
+
+    .header-actions .button {
+        display:
+            none;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header-container {
+        min-height:
+            5.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header {
+        transition:
+            none;
+    }
+}

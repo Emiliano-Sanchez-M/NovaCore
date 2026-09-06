@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- 
+         META
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NovaCore — Arquitectura digital, software y sistemas tecnológicos.">
+    <meta name="author" content="NovaCore">
+    <meta name="theme-color" content="#050505">
+    <link rel="shortcut icon" href="./assets/icos/icon.svg" type="image/x-icon">
+    <title>NovaCore — Arquitectura Digital</title>
+
+    <!-- 
+         BASE
+    -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/themes.css">
+    <link rel="stylesheet" href="css/base/animations.css">
+
+    <!--
+         COMPONENTS
+    -->
+    <link rel="stylesheet" href="css/components/loader.css">
+    <link rel="stylesheet" href="css/components/typography.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/container.css">
+    <link rel="stylesheet" href="css/components/brand.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/languaje-selector.css">
+    <link rel="stylesheet" href="css/components/section-meta.css">
+    <link rel="stylesheet" href="css/components/capability.css">
+    <link rel="stylesheet" href="css/components/projects.css">
+    <link rel="stylesheet" href="css/components/core.css">
+    <link rel="stylesheet" href="css/components/metrics.css">
+    <link rel="stylesheet" href="css/components/contact.css">
+
+    <!--
+         LAYOUTS
+    -->
+    <link rel="stylesheet" href="css/layouts/header.css">
+    <link rel="stylesheet" href="css/layouts/hero.css">
+    <link rel="stylesheet" href="css/layouts/sections.css">
+    <link rel="stylesheet" href="css/layouts/footer.css">
+    <link rel="stylesheet" href="css/layouts/mobile-menu.css">
+
+</head>
+
+<body data-theme="dark">
+
+    <div class="page-loader" id="page-loader" aria-hidden="true">
+
+        <div class="page-loader__grid" aria-hidden="true">
+            <span class="page-loader__grid-line page-loader__grid-line--vertical"></span>
+            <span class="page-loader__grid-line page-loader__grid-line--vertical"></span>
+            <span class="page-loader__grid-line page-loader__grid-line--horizontal"></span>
+            <span class="page-loader__grid-line page-loader__grid-line--horizontal"></span>
+        </div>
+
+        <div class="page-loader__metadata" aria-hidden="true">
+            <span class="page-loader__metadata-item page-loader__metadata-item--top">
+                NVC / 001
+            </span>
+            <span class="page-loader__metadata-item page-loader__metadata-item--bottom">
+                SYSTEM / INITIALIZING
+            </span>
+            <span class="page-loader__metadata-item page-loader__metadata-item--left">
+                ARCHITECTURE
+            </span>
+            <span class="page-loader__metadata-item page-loader__metadata-item--right">
+                CORE
+            </span>
+        </div>
+
+        <div class="page-loader__core">
+            <div class="page-loader__core-ring" aria-hidden="true"></div>
+            <img src="assets/icos/icon.svg" class="page-loader__icon" alt="" aria-hidden="true">
+        </div>
+
+        <div class="page-loader__panels" aria-hidden="true">
+            <div class="page-loader__panel page-loader__panel--top"></div>
+            <div class="page-loader__panel page-loader__panel--right"></div>
+            <div class="page-loader__panel page-loader__panel--bottom"></div>
+            <div class="page-loader__panel page-loader__panel--left"></div>
+        </div>
+    </div>
+
+
+    <!--
+     SITE HEADER
+    -->
+    <header class="site-header">
+        <div class="header-container">
+
+            <!--
+             BRAND
+            -->
+            <a href="#hero" class="site-brand" aria-label="NovaCore — Inicio">
+                <img src="./assets/icos/icon.svg" class="site-brand__icon" alt="" aria-hidden="true">
+                <span class="site-brand__name" data-i18n="brand.name">
+                    NOVACORE
+                </span>
+            </a>
+
+            <!-- 
+             MAIN NAVIGATION
+             -->
+            <nav id="mobile-navigation" class="site-navigation" aria-label="Navegación principal">
+                <ul class="navigation-list">
+                    <li class="navigation-item">
+                        <a href="#capabilities" class="navigation-link" data-i18n="navigation.services">
+                            Servicios
+                        </a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="#work" class="navigation-link" data-i18n="navigation.work">
+                            Proyectos
+                        </a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="#about" class="navigation-link" data-i18n="navigation.about">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="./views/team.html" class="navigation-link" data-i18n="navigation.team">
+                            Equipo
+                        </a>
+                    </li>
+                    <li class="navigation-item">
+                        <a href="#contact" class="navigation-link" data-i18n="navigation.contact">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--
+             HEADER ACTIONS
+            -->
+            <div class="header-actions">
+                <!-- Language selector -->
+                <button type="button" class="language-selector" aria-label="Cambiar idioma" aria-expanded="false">
+                    <span class="language-selector__active" data-i18n="language.es">
+                        ES
+                    </span>
+                    <span class="language-selector__separator" aria-hidden="true">
+                        /
+                    </span>
+                    <span class="language-selector__option" data-i18n="language.en">
+                        EN
+                    </span>
+                </button>
+
+                <!-- Main CTA -->
+                <a href="#contact" class="button button--primary" data-i18n="navigation.startProject">
+                    Iniciar proyecto
+                </a>
+            </div>
+
+            <!-- 
+             MOBILE MENU TOGGLE
+            -->
+            <button class="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="mobile-navigation">
+                <span class="mobile-menu-toggle__line" aria-hidden="true"></span>
+
+                <span class="mobile-menu-toggle__line" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <!--
+         MAIN CONTENT
+    -->
+    <main class="site-main">
+        <!----
+             HERO
+         -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <!-- Hero content -->
+                <div class="hero-content">
+                    <p class="section-label" data-i18n="hero.label" data-reveal>
+                        ARQUITECTURA DIGITAL
+                    </p>
+                    <h1 id="hero-title" class="hero-title" data-i18n="hero.title" data-reveal data-reveal-delay="1">
+                        Construimos sistemas
+                        para lo que viene.
+                    </h1>
+                    <p class="hero-description" data-i18n="hero.description" data-reveal data-reveal-delay="2">
+                        NovaCore diseña y desarrolla sistemas digitales
+                        donde el software, la arquitectura y la tecnología
+                        convergen.
+                    </p>
+                    <!-- Hero actions -->
+                    <div class="hero-actions" data-reveal data-reveal-delay="3">
+                        <a href="#work" class="button button--primary" data-i18n="hero.primaryAction">
+                            Explorar proyectos
+                        </a>
+                        <a href="#about" class="button button--secondary" data-i18n="hero.secondaryAction">
+                            Conocer NovaCore
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero visual -->
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-visual__core">
+                        <span class="hero-visual__core-label">
+                            CORE
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+             PHILOSOPHY
+         -->
+        <section id="philosophy" class="philosophy-section" aria-labelledby="philosophy-title">
+            <div class="section-container">
+                <div class="section-meta" data-reveal>
+                    <span class="section-number">
+                        01
+                    </span>
+                    <span class="section-name" data-i18n="philosophy.label">
+                        FILOSOFÍA
+                    </span>
+                </div>
+                <div class="philosophy-content">
+                    <h2 id="philosophy-title" class="section-title" data-i18n="philosophy.title" data-reveal
+                        data-reveal-delay="1">
+                        No sólo desarrollamos software.
+                        Diseñamos sistemas.
+                    </h2>
+                    <p class="section-description" data-i18n="philosophy.description" data-reveal data-reveal-delay="2">
+                        La tecnología adquiere verdadero valor cuando
+                        la arquitectura, la ingeniería y el propósito
+                        funcionan como un solo sistema.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- 
+             CAPABILITIES
+         -->
+        <section id="capabilities" class="capabilities-section" aria-labelledby="capabilities-title">
+            <div class="section-container">
+                <!-- Section header -->
+                <div class="section-header">
+                    <div class="section-meta" data-reveal>
+                        <span class="section-number">
+                            02
+                        </span>
+                        <span class="section-name" data-i18n="capabilities.label">
+                            CAPACIDADES
+                        </span>
+                    </div>
+                    <h2 id="capabilities-title" class="section-title" data-i18n="capabilities.title" data-reveal
+                        data-reveal-delay="1">
+                        Lo que construimos.
+                    </h2>
+                </div>
+                <!-- Capabilities list -->
+                <div class="capabilities-list">
+                    <!-- Capability 01 -->
+                    <article class="capability" data-reveal data-reveal-delay="1">
+                        <span class="capability-number">
+                            01
+                        </span>
+                        <div class="capability-content">
+                            <h3 class="capability-title" data-i18n="capabilities.software.title">
+                                Arquitectura de Software
+                            </h3>
+                            <p class="capability-description" data-i18n="capabilities.software.description">
+                                Diseñamos sistemas de software confiables,
+                                mantenibles y escalables.
+                            </p>
+                        </div>
+                        <span class="capability-arrow" aria-hidden="true">
+                            →
+                        </span>
+                    </article>
+                    <!-- Capability 02 -->
+                    <article class="capability" data-reveal data-reveal-delay="2">
+                        <span class="capability-number">
+                            02
+                        </span>
+                        <div class="capability-content">
+                            <h3 class="capability-title" data-i18n="capabilities.products.title">
+                                Productos Digitales
+                            </h3>
+                            <p class="capability-description" data-i18n="capabilities.products.description">
+                                Transformamos ideas en productos digitales
+                                funcionales y preparados para crecer.
+                            </p>
+                        </div>
+                        <span class="capability-arrow" aria-hidden="true">
+                            →
+                        </span>
+                    </article>
+                    <!-- Capability 03 -->
+                    <article class="capability" data-reveal data-reveal-delay="3">
+                        <span class="capability-number">
+                            03
+                        </span>
+                        <div class="capability-content">
+                            <h3 class="capability-title" data-i18n="capabilities.backend.title">
+                                Sistemas Backend
+                            </h3>
+                            <p class="capability-description" data-i18n="capabilities.backend.description">
+                                Construimos infraestructura backend robusta
+                                para aplicaciones complejas.
+                            </p>
+                        </div>
+                        <span class="capability-arrow" aria-hidden="true">
+                            →
+                        </span>
+                    </article>
+                    <!-- Capability 04 -->
+                    <article class="capability" data-reveal data-reveal-delay="1">
+                        <span class="capability-number">
+                            04
+                        </span>
+                        <div class="capability-content">
+                            <h3 class="capability-title" data-i18n="capabilities.data.title">
+                                Datos y Bases de Datos
+                            </h3>
+                            <p class="capability-description" data-i18n="capabilities.data.description">
+                                Diseñamos sistemas de datos estructurados,
+                                confiables y escalables.
+                            </p>
+                        </div>
+                        <span class="capability-arrow" aria-hidden="true">
+                            →
+                        </span>
+                    </article>
+                    <!-- Capability 05 -->
+                    <article class="capability" data-reveal data-reveal-delay="2">
+                        <span class="capability-number">
+                            05
+                        </span>
+                        <div class="capability-content">
+                            <h3 class="capability-title" data-i18n="capabilities.automation.title">
+                                Automatización
+                            </h3>
+                            <p class="capability-description" data-i18n="capabilities.automation.description">
+                                Diseñamos flujos inteligentes que reducen
+                                la complejidad y mejoran la eficiencia.
+                            </p>
+                        </div>
+                        <span class="capability-arrow" aria-hidden="true">
+                            →
+                        </span>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!--
+             THE CORE
+        -->
+        <section id="core" class="core-section" aria-labelledby="core-title">
+            <div class="section-container">
+                <div class="section-meta" data-reveal>
+                    <span class="section-number">
+                        03
+                    </span>
+                    <span class="section-name" data-i18n="core.label">
+                        THE CORE
+                    </span>
+                </div>
+                <div class="core-layout">
+                    <!-- Core visual -->
+                    <div class="core-visual" aria-hidden="true" data-reveal="scale" data-reveal-delay="1">
+                        <div class="core-visual__object">
+                            <!-- Outer orbit -->
+                            <span class="core-orbit core-orbit--outer">
+                                <span class="core-marker"></span>
+                            </span>
+                            <!-- Inner orbit -->
+                            <span class="core-orbit core-orbit--inner">
+                                <span class="core-marker"></span>
+                            </span>
+                            <!-- Core label -->
+                            <span class="core-visual__label">
+                                NOVA
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Core content -->
+                    <div class="core-content">
+                        <h2 id="core-title" class="section-title" data-i18n="core.title" data-reveal
+                            data-reveal-delay="1">
+                            Todo comienza en el núcleo.
+                        </h2>
+                        <p class="section-description" data-i18n="core.description" data-reveal data-reveal-delay="2">
+                            Diseñamos cada sistema desde sus fundamentos:
+                            arquitectura, datos, lógica y experiencia.
+                            El resultado es tecnología preparada para evolucionar.
+                        </p>
+                        <!-- Principles -->
+                        <ul class="core-principles">
+                            <li class="core-principle" data-reveal data-reveal-delay="1">
+                                <span class="core-principle__number">
+                                    01
+                                </span>
+                                <span class="core-principle__name" data-i18n="core.principles.architecture">
+                                    Arquitectura
+                                </span>
+                            </li>
+                            <li class="core-principle" data-reveal data-reveal-delay="2">
+                                <span class="core-principle__number">
+                                    02
+                                </span>
+                                <span class="core-principle__name" data-i18n="core.principles.engineering">
+                                    Ingeniería
+                                </span>
+                            </li>
+                            <li class="core-principle" data-reveal data-reveal-delay="3">
+                                <span class="core-principle__number">
+                                    03
+                                </span>
+                                <span class="core-principle__name" data-i18n="core.principles.precision">
+                                    Precisión
+                                </span>
+                            </li>
+                            <li class="core-principle" data-reveal data-reveal-delay="4">
+                                <span class="core-principle__number">
+                                    04
+                                </span>
+                                <span class="core-principle__name" data-i18n="core.principles.scalability">
+                                    Escalabilidad
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 
+             SELECTED WORK
+         -->
+        <section id="work" class="work-section" aria-labelledby="work-title">
+            <div class="section-container">
+                <!-- Section header -->
+                <div class="section-header">
+                    <div class="section-meta" data-reveal>
+                        <span class="section-number">
+                            04
+                        </span>
+                        <span class="section-name" data-i18n="work.label">
+                            PROYECTOS
+                        </span>
+                    </div>
+                    <h2 id="work-title" class="section-title" data-i18n="work.title" data-reveal data-reveal-delay="1">
+                        Sistemas que hemos construido.
+                    </h2>
+                </div>
+                <!-- Projects -->
+                <div class="work-list">
+                    <article class="project project--featured" data-reveal="scale" data-reveal-delay="1">
+                        <div class="project-visual" aria-hidden="true">
+                            <div class="project-placeholder">
+                                ROBOGENIUS
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category" data-i18n="work.robogenius.category">
+                                EDUCATIONAL TECHNOLOGY / WEB
+                            </span>
+                            <h3 class="project-title" data-i18n="work.robogenius.title">
+                                RoboGenius
+                            </h3>
+                            <p class="project-description" data-i18n="work.robogenius.description">
+                                Landing page institucional diseñada para impulsar el crecimiento
+                                de RoboGenius, presentar sus servicios y conectar a jóvenes con
+                                oportunidades de formación y competencias de robótica a nivel
+                                nacional e internacional.
+                            </p>
+                            <a href="https://emiliano-sanchez-m.github.io/RoboGenius-Web-Proposal-V1/"
+                                class="project-link" target="_blank" rel="noopener noreferrer"
+                                data-i18n="work.viewProject">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </article>
+                    <!-- NovaShop -->
+                    <article class="project" data-reveal data-reveal-delay="2">
+                        <div class="project-visual" aria-hidden="true">
+                            <div class="project-placeholder">
+                                NOVASHOP
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category" data-i18n="work.novashop.category">
+                                DATA / SYSTEMS
+                            </span>
+                            <h3 class="project-title" data-i18n="work.novashop.title">
+                                NovaShop
+                            </h3>
+                            <p class="project-description" data-i18n="work.novashop.description">
+                                Plataforma de gestión empresarial respaldada
+                                por un sistema de datos estructurado y orientado
+                                a operaciones reales de negocio.
+                            </p>
+                            <a href="#" class="project-link" data-i18n="work.viewProject">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </article>
+                    <!-- NovaURL -->
+                    <article class="project" data-reveal data-reveal-delay="3">
+                        <div class="project-visual" aria-hidden="true">
+                            <div class="project-placeholder">
+                                NOVAURL
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category" data-i18n="work.novaurl.category">
+                                BACKEND / INFRASTRUCTURE
+                            </span>
+                            <h3 class="project-title" data-i18n="work.novaurl.title">
+                                NovaURL
+                            </h3>
+                            <p class="project-description" data-i18n="work.novaurl.description">
+                                Servicio de acortamiento de URLs diseñado
+                                alrededor de una arquitectura backend
+                                ligera y eficiente.
+                            </p>
+                            <a href="#" class="project-link" data-i18n="work.viewProject">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!--
+             ABOUT
+        -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="section-container">
+                <div class="section-meta" data-reveal>
+                    <span class="section-number">
+                        05
+                    </span>
+                    <span class="section-name" data-i18n="about.label">
+                        NOVACORE
+                    </span>
+                </div>
+                <div class="about-layout">
+                    <div class="about-content">
+                        <h2 id="about-title" class="section-title" data-i18n="about.title" data-reveal
+                            data-reveal-delay="1">
+                            La tecnología no es el destino.
+                            Es la arquitectura que lo hace posible.
+                        </h2>
+                        <p class="section-description" data-i18n="about.description" data-reveal data-reveal-delay="2">
+                            NovaCore es un estudio tecnológico enfocado
+                            en arquitectura de software, productos digitales
+                            y sistemas inteligentes.
+                        </p>
+                    </div>
+                    <!-- Metrics -->
+                    <div class="about-metrics">
+                        <div class="metric" data-reveal data-reveal-delay="1">
+                            <span class="metric-value">
+                                01
+                            </span>
+                            <span class="metric-label" data-i18n="about.metrics.focus">
+                                Enfoque
+                            </span>
+                        </div>
+                        <div class="metric" data-reveal data-reveal-delay="2">
+                            <span class="metric-value">
+                                05+
+                            </span>
+                            <span class="metric-label" data-i18n="about.metrics.capabilities">
+                                Capacidades
+                            </span>
+                        </div>
+                        <div class="metric" data-reveal data-reveal-delay="3">
+                            <span class="metric-value">
+                                ∞
+                            </span>
+                            <span class="metric-label" data-i18n="about.metrics.possibilities">
+                                Posibilidades
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 
+             CONTACT
+        -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="section-container">
+                <div class="section-meta" data-reveal>
+                    <span class="section-number">
+                        06
+                    </span>
+                    <span class="section-name" data-i18n="contact.label">
+                        CONTACT
+                    </span>
+                </div>
+                <div class="contact-layout">
+                    <!-- Contact introduction -->
+                    <div class="contact-content">
+                        <h2 class="contact-title" id="contact-title" data-i18n="contact.title" data-reveal
+                            data-reveal-delay="1">
+                            Construyamos algo con propósito.
+                        </h2>
+                        <p class="contact-description" data-i18n="contact.description" data-reveal
+                            data-reveal-delay="2">
+                            Si tienes un problema que resolver, un sistema
+                            que diseñar o una idea que convertir en producto,
+                            hablemos.
+                        </p>
+                        <div class="contact-actions" data-reveal data-reveal-delay="3">
+                            <a class="button button--primary" href="mailto:hello@novacore.dev"
+                                data-i18n="contact.primary">
+                                Iniciar conversación
+                            </a>
+                            <a class="button button--secondary" href="mailto:hello@novacore.dev"
+                                data-i18n="contact.secondary">
+                                hello@novacore.dev
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Contact form -->
+                    <div class="contact-form-wrapper" data-reveal="right" data-reveal-delay="1">
+                        <div class="contact-form-header">
+                            <span class="section-label" data-i18n="contact.form.label">
+                                Start a Project
+                            </span>
+                            <p class="contact-form-intro" data-i18n="contact.form.intro">
+                                Cuéntanos brevemente qué quieres construir.
+                            </p>
+                        </div>
+                        <form class="contact-form" action="#" method="post">
+                            <div class="contact-form__field">
+                                <label class="contact-form__label" for="contact-name" data-i18n="contact.form.name">
+                                    Nombre
+                                </label>
+                                <input class="contact-form__input" type="text" id="contact-name" name="name"
+                                    autocomplete="name" placeholder="Tu nombre"
+                                    data-i18n-placeholder="contact.form.namePlaceholder" required>
+                            </div>
+                            <div class="contact-form__field">
+                                <label class="contact-form__label" for="contact-email" data-i18n="contact.form.email">
+                                    Correo electrónico
+                                </label>
+                                <input class="contact-form__input" type="email" id="contact-email" name="email"
+                                    autocomplete="email" placeholder="tu@email.com"
+                                    data-i18n-placeholder="contact.form.emailPlaceholder" required>
+
+                            </div>
+                            <div class="contact-form__field">
+                                <label class="contact-form__label" for="contact-company"
+                                    data-i18n="contact.form.company">
+                                    Empresa / Organización
+                                </label>
+                                <input class="contact-form__input" type="text" id="contact-company" name="company"
+                                    autocomplete="organization" placeholder="Nombre de tu empresa"
+                                    data-i18n-placeholder="contact.form.companyPlaceholder">
+                            </div>
+                            <div class="contact-form__field">
+                                <label class="contact-form__label" for="contact-project"
+                                    data-i18n="contact.form.project">
+                                    Tipo de proyecto
+                                </label>
+                                <select class="contact-form__input contact-form__select" id="contact-project"
+                                    name="project" required>
+                                    <option value="" selected disabled data-i18n="contact.form.projectPlaceholder">
+                                        Selecciona una opción
+                                    </option>
+                                    <option value="software" data-i18n="contact.form.projectSoftware">
+                                        Desarrollo de software
+                                    </option>
+                                    <option value="web" data-i18n="contact.form.projectWeb">
+                                        Desarrollo web
+                                    </option>
+                                    <option value="database" data-i18n="contact.form.projectDatabase">
+                                        Arquitectura de datos
+                                    </option>
+                                    <option value="consulting" data-i18n="contact.form.projectConsulting">
+                                        Consultoría tecnológica
+                                    </option>
+                                    <option value="other" data-i18n="contact.form.projectOther">
+                                        Otro
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="contact-form__field">
+                                <label class="contact-form__label" for="contact-budget" data-i18n="contact.form.budget">
+                                    Presupuesto estimado
+                                </label>
+                                <select class="contact-form__input contact-form__select" id="contact-budget"
+                                    name="budget">
+                                    <option value="" selected disabled data-i18n="contact.form.budgetPlaceholder">
+                                        Selecciona un rango
+                                    </option>
+                                    <option value="under-25">
+                                        &lt; $25,000 MXN
+                                    </option>
+                                    <option value="25-50">
+                                        $25,000 – $50,000 MXN
+                                    </option>
+                                    <option value="50-100">
+                                        $50,000 – $100,000 MXN
+                                    </option>
+                                    <option value="100-plus">
+                                        $100,000+ MXN
+                                    </option>
+                                    <option value="unknown" data-i18n="contact.form.budgetUnknown">
+                                        Aún no lo sé
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="contact-form__field contact-form__field--full">
+                                <label class="contact-form__label" for="contact-message"
+                                    data-i18n="contact.form.message">
+                                    Cuéntanos sobre tu proyecto
+                                </label>
+                                <textarea class="contact-form__input contact-form__textarea" id="contact-message"
+                                    name="message" rows="7" placeholder="¿Qué quieres construir?"
+                                    data-i18n-placeholder="contact.form.messagePlaceholder" required></textarea>
+                            </div>
+                            <div class="contact-form__footer">
+                                <p class="contact-form__privacy" data-i18n="contact.form.privacy">
+                                    Utilizaremos esta información únicamente
+                                    para responder a tu solicitud.
+                                </p>
+                                <button class="button button--primary" type="submit" data-i18n="contact.form.submit">
+                                    Enviar solicitud
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+         SITE FOOTER
+    -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer brand -->
+            <div class="footer-brand">
+                <a href="#hero" class="site-brand">
+                    <span class="site-brand__name">
+                        NOVACORE
+                    </span>
+                </a>
+                <p class="footer-tagline" data-i18n="footer.tagline">
+                    Arquitectura Digital
+                </p>
+            </div>
+            <!-- Footer navigation -->
+            <nav class="footer-navigation" aria-label="Navegación secundaria">
+                <ul class="footer-navigation__list">
+                    <li>
+                        <a href="#capabilities" data-i18n="navigation.services">
+                            Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#work" data-i18n="navigation.work">
+                            Proyectos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-i18n="navigation.about">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" data-i18n="navigation.contact">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Footer status -->
+            <div class="footer-status">
+                <span class="footer-status__indicator" aria-hidden="true"></span>
+                <span data-i18n="footer.status">
+                    Sistemas operativos
+                </span>
+            </div>
+            <!-- Footer legal -->
+            <div class="footer-bottom">
+                <span>
+                    © 2026 NovaCore
+                </span>
+                <span data-i18n="footer.rights">
+                    Todos los derechos reservados.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/loader.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/animations.js"></script>
+    <script type="module" src="js/hero-core.js"></script>
+    <script src="js/mobile-menu.js"></script>
+</body>
+
+</html>

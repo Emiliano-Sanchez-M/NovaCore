@@ -1,0 +1,277 @@
+.mobile-menu-toggle {
+    display: none;
+    position: relative;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border:
+        var(--border-width-thin) solid var(--color-border);
+    background:
+        transparent;
+    color:
+        var(--color-text-primary);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition:
+        border-color var(--transition-normal),
+        background-color var(--transition-normal);
+}
+
+.mobile-menu-toggle__line {
+    position: absolute;
+    width: 1.125rem;
+    height: var(--border-width-thin);
+    background-color:
+        var(--color-text-primary);
+    transition:
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+.mobile-menu-toggle__line:first-child {
+    transform:
+        translateY(-3px);
+}
+
+.mobile-menu-toggle__line:last-child {
+    transform:
+        translateY(3px);
+}
+
+.mobile-menu-toggle:hover {
+    border-color:
+        var(--color-border-strong);
+    background-color:
+        var(--color-surface-highlight);
+}
+
+.mobile-menu-toggle.is-active {
+    border-color:
+        var(--color-text-primary);
+}
+
+.mobile-menu-toggle.is-active .mobile-menu-toggle__line:first-child {
+    transform:
+        rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active .mobile-menu-toggle__line:last-child {
+    transform:
+        rotate(-45deg);
+}
+
+@media (max-width: 767px) {
+    .mobile-menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+    .site-header .site-navigation {
+        position: fixed;
+        top: 4rem;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index:
+            calc(var(--z-header) - 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: calc(100vh - 4rem);
+        margin: 0;
+        padding:
+            var(--space-12) var(--container-padding-mobile) var(--space-10);
+        background:
+            var(--color-background);
+        border-top:
+            var(--border-width-thin) solid var(--color-border-subtle);
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform:
+            translateY(-12px);
+        transition:
+            opacity var(--transition-normal),
+            transform var(--transition-normal),
+            visibility var(--transition-normal);
+    }
+
+    .site-header.is-menu-open .site-navigation {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform:
+            translateY(0);
+    }
+
+    .site-header .navigation-list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .site-header .navigation-item {
+        position: relative;
+        display: flex;
+        width: 100%;
+        min-height: 4.75rem;
+        border-bottom:
+            var(--border-width-thin) solid var(--color-border-subtle);
+        opacity: 0;
+        transform:
+            translateY(12px);
+        transition:
+            opacity 400ms ease,
+            transform 400ms ease;
+    }
+
+    .site-header.is-menu-open .navigation-item {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+
+    .site-header.is-menu-open .navigation-item:nth-child(1) {
+        transition-delay: 80ms;
+    }
+
+    .site-header.is-menu-open .navigation-item:nth-child(2) {
+        transition-delay: 140ms;
+    }
+
+    .site-header.is-menu-open .navigation-item:nth-child(3) {
+        transition-delay: 200ms;
+    }
+
+    .site-header.is-menu-open .navigation-item:nth-child(4) {
+        transition-delay: 260ms;
+    }
+
+    .site-header.is-menu-open .navigation-item:nth-child(5) {
+        transition-delay: 320ms;
+    }
+
+    .site-header .navigation-link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 4.75rem;
+        padding:
+            var(--space-4) 0;
+        font-family:
+            var(--font-heading);
+        font-size:
+            clamp(1.3rem, 6vw, 1.75rem);
+        font-weight:
+            var(--font-weight-medium);
+        line-height:
+            var(--line-height-tight);
+        letter-spacing:
+            -0.025em;
+        color:
+            var(--color-text-primary);
+    }
+
+    .site-header .navigation-link::after {
+        display: none;
+    }
+
+    .site-header .navigation-link:hover {
+        color:
+            var(--color-text-secondary);
+    }
+
+    .site-header .navigation-item::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family:
+            var(--font-mono);
+        font-size:
+            var(--font-size-label);
+        line-height:
+            1;
+        letter-spacing:
+            0.12em;
+        color:
+            var(--color-text-muted);
+        transform:
+            translateY(10px);
+    }
+
+    .site-header .navigation-item:nth-child(1)::before {
+        content: "01";
+    }
+
+    .site-header .navigation-item:nth-child(2)::before {
+        content: "02";
+    }
+
+    .site-header .navigation-item:nth-child(3)::before {
+        content: "03";
+    }
+
+    .site-header .navigation-item:nth-child(4)::before {
+        content: "04";
+    }
+
+    .site-header .navigation-item:nth-child(5)::before {
+        content: "05";
+    }
+
+    .site-header .site-navigation::after {
+        content:
+            "NOVACORE / DIGITAL ARCHITECTURE";
+        display: block;
+        margin-top:
+            auto;
+        padding-top:
+            var(--space-8);
+        font-family:
+            var(--font-mono);
+        font-size:
+            var(--font-size-label);
+        line-height:
+            var(--line-height-normal);
+        letter-spacing:
+            0.12em;
+        color:
+            var(--color-text-muted);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .site-header .site-navigation {
+        padding-top:
+            var(--space-8);
+    }
+
+    .site-header .navigation-item,
+    .site-header .navigation-link {
+        min-height:
+            4.25rem;
+    }
+
+    .site-header .navigation-link {
+        font-size:
+            clamp(1.6rem, 8vw, 2.25rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu-toggle,
+    .mobile-menu-toggle__line,
+    .site-header .site-navigation,
+    .site-header .navigation-item {
+        transition:
+            none;
+    }
+}
